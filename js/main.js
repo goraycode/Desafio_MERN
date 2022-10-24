@@ -1,10 +1,24 @@
-import { getAllCountries } from "./APIS.js";
+import { getAllCountries, getCountry } from "./APIS.js";
 
 const chevronsUp = document.querySelector(".chevrons-up");
+const form = document.querySelector(".form");
 
-function eventsListener() {
+const eventsListener = () => {
     document.addEventListener("DOMContentLoaded", getAllCountries)
+    form.addEventListener("submit", readCountry);
 }
+
+const readCountry = (e) => {
+    e.preventDefault();
+    const search = document.querySelector("#search");
+
+    if (!search.value.length) return;
+
+    getCountry(search.value);
+}
+
+
+
 
 
 const classToChevronsuP = () => {
@@ -20,6 +34,8 @@ const classToChevronsuP = () => {
         }
     })
 };
+
+
 
 
 eventsListener();

@@ -2,6 +2,7 @@ const mainCards = document.querySelector(".cards__allcountries");
 
 export const cards = (response) => {
 
+    limpiarHtml(mainCards);
     response.forEach(country => {
         const { flags: { png }, name: { common }, capital, population, region } = country
 
@@ -45,4 +46,11 @@ export const cards = (response) => {
         mainCards.appendChild(card);
 
     });
+}
+
+
+function limpiarHtml(father) {
+    while (father.firstChild) {
+        father.removeChild(father.firstChild);
+    }
 }

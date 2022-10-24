@@ -47,6 +47,11 @@ img {
   display: block;
 }
 
+h1 a{
+  color: var(--white);
+  text-decoration: none;
+}
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -156,8 +161,9 @@ input[type="submit"]:hover {
 
 @media (min-width: 765px) {
   .cards {
-    justify-content: flex-start;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 11rem));
   }
 }
 

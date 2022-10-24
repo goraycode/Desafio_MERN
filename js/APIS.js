@@ -7,5 +7,10 @@ export const getAllCountries = async () => {
     cards(response);
 }
 
-
+export const getCountry = async (country) => {
+    const url = `https://restcountries.com/v3.1/name/${country}`;
+    const data = await fetch(url);
+    const response = await data.json();
+    cards(response);
+}
 
