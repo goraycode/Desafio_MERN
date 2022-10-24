@@ -14,3 +14,11 @@ export const getCountry = async (country) => {
     cards(response);
 }
 
+
+
+export const getRegion = async (region) => {
+    const url = `https://restcountries.com/v3.1/region/${region}`;
+    const data = await fetch(url);
+    const response = await data.json();
+    cards(response);
+}

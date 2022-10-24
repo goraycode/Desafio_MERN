@@ -1,11 +1,13 @@
-import { getAllCountries, getCountry } from "./APIS.js";
+import { getAllCountries, getCountry, getRegion } from "./APIS.js";
 
 const chevronsUp = document.querySelector(".chevrons-up");
 const form = document.querySelector(".form");
+const region = document.querySelector("#region");
 
 const eventsListener = () => {
     document.addEventListener("DOMContentLoaded", getAllCountries)
     form.addEventListener("submit", readCountry);
+    region.addEventListener("change", readRegion);
 }
 
 const readCountry = (e) => {
@@ -17,7 +19,10 @@ const readCountry = (e) => {
     getCountry(search.value);
 }
 
-
+const readRegion = (e) => {
+    const value = e.target.value;
+    getRegion(value);
+}
 
 
 
