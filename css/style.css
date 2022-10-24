@@ -47,7 +47,7 @@ img {
   display: block;
 }
 
-h1 a{
+h1 a {
   color: var(--white);
   text-decoration: none;
 }
@@ -159,12 +159,8 @@ input[type="submit"]:hover {
   align-items: center;
 }
 
-@media (min-width: 765px) {
-  .cards {
-    justify-content: center;
-    align-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 11rem));
-  }
+.cards-onecountry {
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 }
 
 .card {
@@ -173,6 +169,12 @@ input[type="submit"]:hover {
   width: auto;
   border-radius: 0.5rem;
   transition: transform 250ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-2 {
+  display: flex;
 }
 
 .card:hover {
@@ -229,4 +231,30 @@ input[type="submit"]:hover {
   right: 1rem;
   width: 3rem;
   height: 3rem;
+}
+
+.card-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.card2__img {
+  height: 100%;
+}
+
+.card2__link {
+  background-color: var(--white);
+  width: 20rem;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--sky-blue);
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.card2__link:hover {
+  box-shadow: 1px 1px 10px var(--white);
 }

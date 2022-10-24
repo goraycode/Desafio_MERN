@@ -1,4 +1,4 @@
-import { cards } from "./interface.js";
+import { cards, getAllInfo } from "./interface.js";
 
 export const getAllCountries = async () => {
     const url = "https://restcountries.com/v3.1/all";
@@ -21,4 +21,11 @@ export const getRegion = async (region) => {
     const data = await fetch(url);
     const response = await data.json();
     cards(response);
+}
+
+export const getAllInfoCountry = async (country) => {
+    const url = `https://restcountries.com/v3.1/name/${country}`;
+    const data = await fetch(url);
+    const response = await data.json()
+    getAllInfo(response);
 }
