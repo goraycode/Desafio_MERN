@@ -1,6 +1,4 @@
 const mainCards = document.querySelector(".cards__allcountries");
-const chevronsUp = document.querySelector(".chevrons-up");
-console.log(chevronsUp)
 
 export const cards = (response) => {
 
@@ -47,18 +45,4 @@ export const cards = (response) => {
         mainCards.appendChild(card);
 
     });
-}
-
-export const classToChevronsuP = () => {
-    window.addEventListener("scroll", () => {
-        const scrollPY = window.scrollY;
-
-        chevronsUp.classList.add("hidden");
-        if (scrollPY > 2000) {
-            chevronsUp.classList.add("show");
-        } else {
-            chevronsUp.classList.remove("show");
-            chevronsUp.classList.add("hidden");
-        }
-    })
 }

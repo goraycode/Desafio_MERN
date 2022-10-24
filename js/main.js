@@ -1,12 +1,26 @@
-import { cards, classToChevronsuP } from "./interface.js";
+import { getAllCountries } from "./APIS.js";
 
+const chevronsUp = document.querySelector(".chevrons-up");
 
-async function getAllAPI() {
-    const url = "https://restcountries.com/v3.1/all";
-    const data = await fetch(url);
-    const response = await data.json();
-    cards(response);
+function eventsListener() {
+    document.addEventListener("DOMContentLoaded", getAllCountries)
 }
 
-getAllAPI();
+
+const classToChevronsuP = () => {
+    window.addEventListener("scroll", () => {
+        const scrollPY = window.scrollY;
+
+        chevronsUp.classList.add("hidden");
+        if (scrollPY > 2000) {
+            chevronsUp.classList.add("show");
+        } else {
+            chevronsUp.classList.remove("show");
+            chevronsUp.classList.add("hidden");
+        }
+    })
+};
+
+
+eventsListener();
 classToChevronsuP();
