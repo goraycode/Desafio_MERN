@@ -1,4 +1,4 @@
-import { cards } from "./interface.js";
+import { cards, classToChevronsuP } from "./interface.js";
 
 
 async function getAllAPI() {
@@ -9,3 +9,4 @@ async function getAllAPI() {
 }
 
 getAllAPI();
+classToChevronsuP();

@@ -15,31 +15,53 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="header container">
-
+    <header class="header container" id="header">
       <h1 class="text-center font-bold">Países de todo el mundo</h1>
+      <section class="container section section__form-filter">
+        <form action="" autocomplete="off">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Ej. España"
+          />
+          <input type="submit" value="Buscar" />
+        </form>
+        <div class="filter">
+          <label for="regio">Filtrar por región</label>
+          <select name="region" id="region">
+            <option value="#" selected disabled>Seleccione...</option>
+            <option value="america">Ámerica</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europa</option>
+            <option value="oceania">Oceania</option>
+          </select>
+        </div>
+      </section>
+      <hr class="container my-5" />
     </header>
 
-    <section class="container section section__form-filter">
-      <form action="" autocomplete="off">
-        <input type="text" name="search" id="search" placeholder="Ej. España" />
-        <input type="submit" value="Buscar" />
-      </form>
-      <div class="filter">
-        <label for="regio">Filtrar por región</label>
-        <select name="region" id="region">
-          <option value="#" selected disabled>Seleccione...</option>
-          <option value="america">Ámerica</option>
-          <option value="asia">Asia</option>
-          <option value="europe">Europa</option>
-          <option value="oceania">Oceania</option>
-        </select>
-      </div>
-    </section>
-    <hr class="container my-5" />
     <main class="container cards cards__allcountries"></main>
+    <a href="index.html#header" class="container chevrons-up">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-chevrons-up"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#ffffff"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <polyline points="7 11 12 6 17 11" />
+        <polyline points="7 17 12 12 17 17" />
+      </svg>
+    </a>
     <footer class="footer">
-      
+      <p class="text-center">
+        Desarrollado por Gerson Aguedo Yanac | GorayCode
+      </p>
     </footer>
     <script src="js/main.js" type="module"></script>
   </body>
