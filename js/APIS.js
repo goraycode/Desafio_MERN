@@ -27,5 +27,6 @@ export const getAllInfoCountry = async (country) => {
     const url = `https://restcountries.com/v3.1/name/${country}`;
     const data = await fetch(url);
     const response = await data.json()
-    getAllInfo(response);
+    const results = response.filter(c => c.name.common === country);
+    getAllInfo(results);
 }
