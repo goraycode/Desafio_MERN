@@ -1,5 +1,4 @@
 const mainCards = document.querySelector(".cards");
-const header = document.querySelector(".header");
 const divLoad = document.querySelector(".divLoad");
 export const cards = (response) => {
 
@@ -64,10 +63,7 @@ export const cards = (response) => {
         });
     }, 1000);
 
-
-
 }
-
 
 export const getAllInfo = (response) => {
 
@@ -89,7 +85,6 @@ export const getAllInfo = (response) => {
             const { flags: { png }, name: { common }, currencies, area, timezones, capital, population, region, subregion } = country
             const card = document.createElement("div");
             card.className = 'card-2';
-
 
             const img = document.createElement("img");
             img.className = 'card2__img';
@@ -138,7 +133,6 @@ export const getAllInfo = (response) => {
 
         });
     }, 2000);
-
 
 }
 

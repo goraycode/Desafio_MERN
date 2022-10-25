@@ -22,8 +22,6 @@ export const getCountry = async (country) => {
 
 }
 
-
-
 export const getRegion = async (region) => {
     const url = `https://restcountries.com/v3.1/region/${region}`;
     const data = await fetch(url);
