@@ -1,4 +1,5 @@
 const mainCards = document.querySelector(".cards");
+const header = document.querySelector(".header");
 const divLoad = document.querySelector(".divLoad");
 export const cards = (response) => {
 
@@ -141,8 +142,22 @@ export const getAllInfo = (response) => {
 
 }
 
+export const messageError = () => {
+    limpiarHtml(mainCards);
+    const div = document.createElement("div");
+    div.className = 'message';
+    const pMessage = document.createElement("p");
+    pMessage.className = 'text-center'
+    pMessage.textContent = "País no encontrado";
 
-function limpiarHtml(father) {
+    div.appendChild(pMessage);
+    
+    mainCards.appendChild(div);
+
+}
+
+
+const limpiarHtml = (father) => {
     while (father.firstChild) {
         father.removeChild(father.firstChild);
     }

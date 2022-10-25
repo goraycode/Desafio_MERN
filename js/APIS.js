@@ -1,4 +1,4 @@
-import { cards, getAllInfo } from "./interface.js";
+import { cards, getAllInfo, messageError } from "./interface.js";
 
 export const getAllCountries = async () => {
     const url = "https://restcountries.com/v3.1/all";
@@ -8,10 +8,18 @@ export const getAllCountries = async () => {
 }
 
 export const getCountry = async (country) => {
+
     const url = `https://restcountries.com/v3.1/name/${country}`;
     const data = await fetch(url);
     const response = await data.json();
-    cards(response);
+
+    if (data.status === 200) {
+
+        cards(response);
+    } else {
+        messageError();
+    }
+
 }
 
 
