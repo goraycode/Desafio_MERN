@@ -98,6 +98,12 @@ h1 a {
   }
 }
 
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 input[type="text"] {
   padding: 0.5rem 0;
   background-color: transparent;
@@ -162,7 +168,6 @@ input[type="submit"]:hover {
   display: flex;
   flex-wrap: wrap;
 }
-
 
 .card {
   border: 0.1rem solid var(--sky-blue);
@@ -269,7 +274,7 @@ input[type="submit"]:hover {
   box-shadow: 1px 1px 10px var(--white);
 }
 
-.divLoad{
+.divLoad {
   display: flex;
   place-content: center;
 }

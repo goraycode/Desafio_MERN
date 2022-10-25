@@ -2,56 +2,75 @@ const mainCards = document.querySelector(".cards");
 const divLoad = document.querySelector(".divLoad");
 export const cards = (response) => {
 
-    limpiarHtml(mainCards);
-    response.forEach(country => {
-        const { flags: { png }, name: { common }, capital, population, region } = country
+    divLoad.innerHTML = `   
+    <div class="sk-chase">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+    </div>
+    `;
 
-        const card = document.createElement("div");
-        card.className = 'card';
+    setTimeout(() => {
 
-        const img = document.createElement("img");
-        img.className = 'card__img';
-        img.src = png;
+        divLoad.innerHTML = '';
 
-        const cardInfo = document.createElement("div");
-        cardInfo.className = 'card__info';
+        limpiarHtml(mainCards);
+        response.forEach(country => {
+            const { flags: { png }, name: { common }, capital, population, region } = country
 
-        const pCountry = document.createElement("p");
-        pCountry.className = 'card__country'
-        pCountry.textContent = common;
-        const pCapital = document.createElement("p");
-        pCapital.className = 'card__capital';
-        pCapital.textContent = `Capital: ${capital}`;
-        const pPopulation = document.createElement("p");
-        pPopulation.className = 'card__population'
-        pPopulation.textContent = `Población: ${population}`;
-        const pRegion = document.createElement("p");
-        pRegion.className = 'card__region text-silver';
-        pRegion.textContent = region;
+            const card = document.createElement("div");
+            card.className = 'card';
 
-        const link = document.createElement("a");
-        link.className = 'card__link'
-        link.href = `country.html?q=${common}`;
-        link.textContent = 'Ver más';
+            const img = document.createElement("img");
+            img.className = 'card__img';
+            img.src = png;
 
-        cardInfo.appendChild(pCountry);
-        cardInfo.appendChild(pCapital);
-        cardInfo.appendChild(pPopulation);
-        cardInfo.appendChild(pRegion);
-        cardInfo.appendChild(link);
+            const cardInfo = document.createElement("div");
+            cardInfo.className = 'card__info';
 
-        card.appendChild(img);
-        card.appendChild(cardInfo);
+            const pCountry = document.createElement("p");
+            pCountry.className = 'card__country'
+            pCountry.textContent = common;
+            const pCapital = document.createElement("p");
+            pCapital.className = 'card__capital';
+            pCapital.textContent = `Capital: ${capital}`;
+            const pPopulation = document.createElement("p");
+            pPopulation.className = 'card__population'
+            pPopulation.textContent = `Población: ${population}`;
+            const pRegion = document.createElement("p");
+            pRegion.className = 'card__region text-silver';
+            pRegion.textContent = region;
 
-        mainCards.appendChild(card);
+            const link = document.createElement("a");
+            link.className = 'card__link'
+            link.href = `country.html?q=${common}`;
+            link.textContent = 'Ver más';
 
-    });
+            cardInfo.appendChild(pCountry);
+            cardInfo.appendChild(pCapital);
+            cardInfo.appendChild(pPopulation);
+            cardInfo.appendChild(pRegion);
+            cardInfo.appendChild(link);
+
+            card.appendChild(img);
+            card.appendChild(cardInfo);
+
+            mainCards.appendChild(card);
+
+        });
+    }, 1000);
+
+
+
 }
 
 
 export const getAllInfo = (response) => {
 
-   
+
     divLoad.innerHTML = `   
     <div class="sk-chase">
         <div class="sk-chase-dot"></div>
@@ -63,7 +82,7 @@ export const getAllInfo = (response) => {
     </div>
     `;
     setTimeout(() => {
-        divLoad.innerHTML= '';
+        divLoad.innerHTML = '';
         limpiarHtml(mainCards);
         response.forEach(country => {
             const { flags: { png }, name: { common }, currencies, area, timezones, capital, population, region, subregion } = country
@@ -118,8 +137,6 @@ export const getAllInfo = (response) => {
 
         });
     }, 2000);
-
-
 
 
 }
